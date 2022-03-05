@@ -79,7 +79,7 @@ int xlnx_bridge_set_output(struct xlnx_bridge *bridge,
 			   u32 width, u32 height, u32 bus_fmt);
 int xlnx_bridge_get_output_fmts(struct xlnx_bridge *bridge,
 				const u32 **fmts, u32 *count);
-int xlnx_bridge_set_timing(struct xlnx_bridge *bridge, struct videomode *vm);
+/* int xlnx_bridge_set_timing(struct xlnx_bridge *bridge, struct videomode *vm); */
 struct xlnx_bridge *of_xlnx_bridge_get(struct device_node *bridge_np);
 void of_xlnx_bridge_put(struct xlnx_bridge *bridge);
 
@@ -146,6 +146,7 @@ static inline int xlnx_bridge_get_output_fmts(struct xlnx_bridge *bridge,
 	return 0;
 }
 
+/*
 static int xlnx_bridge_set_timing(struct xlnx_bridge *bridge,
 				  struct videomode *vm)
 {
@@ -153,6 +154,7 @@ static int xlnx_bridge_set_timing(struct xlnx_bridge *bridge,
 		return -ENODEV;
 	return 0;
 }
+*/
 
 static inline struct xlnx_bridge *
 of_xlnx_bridge_get(struct device_node *bridge_np)
